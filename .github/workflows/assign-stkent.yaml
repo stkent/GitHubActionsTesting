@@ -1,16 +1,15 @@
-name: "Assign stkent"
+name: "Assign pr-bot"
 on:
   pull_request:
-    types: [ready_for_review]
+    types: [opened,ready_for_review]
 
 jobs:
   assign-reviewers:
     runs-on: ubuntu-latest
     steps:
-    - name: "Request review from stkent"
+    - name: "Request review from pr-bot"
       uses: rowi1de/auto-assign-review-teams@v1.0.0
       with:
         repo-token: ${{ secrets.REPO_TOKEN }}
-        teams: ""
-        persons: "stkent"
+        persons: "pr-bot"
         include-draft: false
