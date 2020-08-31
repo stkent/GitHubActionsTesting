@@ -1,0 +1,16 @@
+name: "Assign stkent"
+on:
+  pull_request:
+    types: [opened, ready_for_review]
+
+jobs:
+  assign-reviewers:
+    runs-on: ubuntu-latest
+    steps:
+    - name: "Request review from stkent"
+      uses: rowi1de/auto-assign-review-teams@v1.0.0
+      with:
+        repo-token: ${{ secrets.REPO_TOKEN }}
+        teams: ""
+        persons: "stkent"
+        include-draft: false
